@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from "../Components/header";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <main>
+        <section id="main-info">
+          <div className="conteiner-info conteiner ">
+            <div className="item-date"></div>
+          </div>
+        </section>
+        <section id="form-reg">
+          <div className="conteiner-reg conteiner flex">
+            <div className="item-reg flex column">
+              <input type="text" placeholder="Имя" />
+              <input type="text" placeholder="Фамилия" />
+              <input type="text" placeholder="Отчество" />
+            </div>
+            <div className="item-reg flex column">
+              <input type="text" placeholder="электронная почта" />
+              <input type="text" placeholder="номер телефон" />
+              <div className="btn-reg">
+                <a href="№">Отправить</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer></footer>
     </>
-  )
+  );
 }
-
-export default App

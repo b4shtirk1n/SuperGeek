@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "PR9II5QaI5+ScAaLgetIo5/voA1AtQ3beyOVyQPsKJuTPmb8PTu/z1rifTjjVqs/6tjIprUXMhKi6VJtsbV+UQ==",
+  "dgSpecHash": "YLQE2qDIAXOqMyd2tyKj1wkalHCZVyiPJt4JDkU3/AYqz/6M6m459VBhUjsGu5B9O4jDXUqSWxEZGvj777Ee0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\b4shtirk1n\\Documents\\webProject\\SuperGeek\\SuperGeek\\SuperGeek.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\fluentemail.core\\3.0.2\\fluentemail.core.3.0.2.nupkg.sha512",
+    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\fluentemail.smtp\\3.0.2\\fluentemail.smtp.3.0.2.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.13\\microsoft.aspnetcore.openapi.7.0.13.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
@@ -25,6 +27,7 @@
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
@@ -33,7 +36,8 @@
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\b4shtirk1n\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\b4shtirk1n\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
   ],
   "logs": []
 }

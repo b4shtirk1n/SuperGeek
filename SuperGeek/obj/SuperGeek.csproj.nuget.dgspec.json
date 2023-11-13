@@ -42,6 +42,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentEmail.Smtp": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.13, )"
@@ -69,6 +73,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[19.0.0, )"
             }
           },
           "imports": [
