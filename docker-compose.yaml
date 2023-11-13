@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_USER: SuperGeek
+      POSTGRES_PASSWORD: 1111
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

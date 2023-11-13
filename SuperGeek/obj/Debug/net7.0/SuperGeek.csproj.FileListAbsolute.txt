@@ -1,0 +1,7 @@
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.csproj.AssemblyReference.cache
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.AssemblyInfoInputs.cache
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.AssemblyInfo.cs
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.csproj.CoreCompileInputs.cache
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\b4shtirk1n\Documents\webProject\SuperGeek\SuperGeek\obj\Debug\net7.0\SuperGeek.MvcApplicationPartsAssemblyInfo.cache
