@@ -19,22 +19,25 @@ export default function App() {
     setMsg("");
   }, [email, phone, firstName, lastName, patronymic, policy]);
 
-  const data = JSON.stringify({
-    email,
-    phone,
-    firstName,
-    lastName,
-    patronymic,
-  });
+  const data = JSON.stringify(
+    {
+      email,
+      phone,
+      firstName,
+      lastName,
+      patronymic,
+    },
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   async function onSingUp() {
     if (policy !== true)
       return setMsg("Примите соглашение с политикой конфиденциальности");
 
     try {
-      const response = await axios.post(singUpURL, data, {
-        headers: { "Content-Type": "application/json" },
-      });
+      const response = await axios.post(singUpURL, data);
     } catch (ex) {
       if (ex.response) {
         setMsg("Сервер недоступен!");
