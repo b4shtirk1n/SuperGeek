@@ -10,6 +10,7 @@ namespace SuperGeek.Models
         public string Email { get; set; } = null!;
 
         [Required]
+        [Phone]
         public string Phone { get; set; } = null!;
 
         [Required]
@@ -21,6 +22,6 @@ namespace SuperGeek.Models
         public string LastName { get; set; } = null!;
 
         [StringLength(20)]
-        public string? Patronymic { get; set; }
+        public string? Patronymic { get; set; } = null!;
     }
 }

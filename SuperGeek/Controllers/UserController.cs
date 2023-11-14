@@ -6,15 +6,17 @@ using SuperGeek.Services;
 namespace SuperGeek.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ServiceFilter(typeof(DbConnectionService))]
     public class UserController : ControllerBase
     {
         private readonly SuperGeekDbContext context;
+        private readonly TelegramService tg;
 
-        public UserController(SuperGeekDbContext context)
+        public UserController(SuperGeekDbContext context, TelegramService tg)
         {
             this.context = context;
+            this.tg = tg;
         }
 
         [HttpPost]
@@ -22,7 +24,7 @@ namespace SuperGeek.Controllers
         {
             if (await context.Users.FirstOrDefaultAsync(u => u.Email == user.Email
                 || u.Phone == user.Phone) is User)
-                return BadRequest();
+                return Conflict();
 
             try
             {
@@ -40,6 +42,10 @@ namespace SuperGeek.Controllers
             {
                 return BadRequest();
             }
+            await tg.SendLogAsync($"Пользователь:\n{user.Email}\n{user.Phone}\n{user.FirstName}"
+                + $"\n{user.LastName}{(user.Patronymic == null ? ""
+                : $"\n{user.Patronymic}")}\nзарегистрирован");
+
             return Ok();
         }
     }
