@@ -1,10 +1,12 @@
+import logo from "../src/assets/image/Logo.svg";
+
 export default function Footer() {
   return (
     <footer className="b-black">
       <div className="footer-conteiner conteiner">
         <div className="footer-item flex ai-c jc-sb">
           <a className="logo" href="#">
-            <img srcSet="../src/assets/image/Logo.svg" alt="" srcset="" />
+            <img src={logo} alt="" />
           </a>
           <nav>
             <a className="c-w" href="#description">

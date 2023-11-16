@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import axios from "../api/axios";
+import aboutUs from "../src/assets/image/aboutUs.svg";
+import logo from "../src/assets/image/Logo.svg";
+import insta from "../src/assets/image/insta.svg";
+import vk from "../src/assets/image/vk.svg";
+import telegram from "../src/assets/image/telegram.svg";
 
 export default function App() {
   const singUpURL = "/User/SingUp";
@@ -155,11 +160,7 @@ export default function App() {
                 </p>
               </div>
               <div className="photo">
-                <img
-                  srcSet="../src/assets/image/aboutUs.svg"
-                  alt="photo"
-                  srcset=""
-                />
+                <img src={aboutUs} alt="photo" />
               </div>
             </div>
           </div>
@@ -293,7 +294,7 @@ export default function App() {
           <div className="main-application-form-block flex jc-c ai-c">
             <div className="application-form-item application-form-item-left">
               <a className="logo" href="#">
-                <img srcSet="../src/assets/image/Logo.svg" alt="" srcset="" />
+                <img src={logo} alt="" />
               </a>
               <h4>Заполните поля для регистрации на форум</h4>
               <p>форма регистрации доступна все студентам СПО и Вузов</p>
@@ -393,17 +394,13 @@ export default function App() {
               <div className="item-contact-info icon-con c-black">
                 <p>Соц.сети</p>
                 <a href="#" className="icon-contact">
-                  <img srcSet="../src/assets/image/insta.svg" alt="" srcset="" />
+                  <img src={insta} alt="" />
                 </a>
                 <a href="#" className="icon-contact">
-                  <img srcSet="../src/assets/image/vk.svg" alt="" srcset="" />
+                  <img src={vk} alt="" />
                 </a>
                 <a href="#" className="icon-contact">
-                  <img
-                    srcSet="../src/assets/image/telegram.svg"
-                    alt=""
-                    srcset=""
-                  />
+                  <img src={telegram} alt="" />
                 </a>
               </div>
             </div>
