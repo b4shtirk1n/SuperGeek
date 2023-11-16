@@ -2,25 +2,29 @@ using SuperGeek.Models;
 using SuperGeek.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+var tgConfig = builder.Configuration.GetSection("Telegram");
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddHttpContextAccessor();
-
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<SuperGeekDbContext>(ServiceLifetime.Singleton);
+builder.Services.AddDbContext<SuperGeekDbContext>();
 builder.Services.AddTransient<DbConnectionService>();
 
-var tgConfig = builder.Configuration.GetSection("Telegram");
 builder.Services.AddTransient(o => new TelegramService(tgConfig["API"]!, tgConfig["Username"]!));
 
 var app = builder.Build();
 
+app.UseCors(b =>
+{
+    b.AllowAnyOrigin();
+    b.AllowAnyHeader();
+    b.AllowAnyMethod();
+});
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

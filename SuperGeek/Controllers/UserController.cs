@@ -2,12 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using SuperGeek.Models;
 using SuperGeek.Services;
+using System.Net;
+using System.Net.Mail;
 
 namespace SuperGeek.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    [ServiceFilter(typeof(DbConnectionService))]
     public class UserController : ControllerBase
     {
         private readonly SuperGeekDbContext context;
@@ -22,6 +23,21 @@ namespace SuperGeek.Controllers
         [HttpPost]
         public async Task<IActionResult> SingUp(UserDTO user)
         {
+            MailAddress from = new("SuperGeek2023@yandex.ru");
+            MailAddress to = new("wowan4512@gmail.com");
+            MailMessage message = new(from, to)
+            {
+                Subject = "Твое приложение оценили!",
+                IsBodyHtml = false,
+                Body = $"Your mark is"
+            };
+            SmtpClient smtp = new("smtp.yandex.ru", 465)
+            {
+                Credentials = new NetworkCredential("SuperGeek", "sgslmzcydcrfqcai"),
+                EnableSsl = true
+            };
+            smtp.Send(message);
+
             if (await context.Users.FirstOrDefaultAsync(u => u.Email == user.Email
                 || u.Phone == user.Phone) is User)
                 return Conflict();

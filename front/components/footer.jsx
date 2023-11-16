@@ -3,9 +3,9 @@ export default function Footer() {
     <footer className="b-black">
       <div className="footer-conteiner conteiner">
         <div className="footer-item flex ai-c jc-sb">
-          <div className="logo">
-            <h1 className="c-w">SuperGEEK</h1>
-          </div>
+          <a className="logo" href="#">
+            <img src="../src/assets/image/Logo.svg" alt="" srcset="" />
+          </a>
           <nav>
             <a className="c-w" href="#description">
               Описание
@@ -13,11 +13,14 @@ export default function Footer() {
             <a className="c-w" href="#program">
               Программа
             </a>
-            <a className="c-w" href="#">
-              Контакты
+            <a className="c-w" href="#advantage">
+              Преимущества
             </a>
-            <a className="c-w btn-main" href="#">
+            <a className="c-w" href="#main-application-form">
               Зарегистрироваться
+            </a>
+            <a className="c-w" href="#contact">
+              Контакты
             </a>
           </nav>
         </div>

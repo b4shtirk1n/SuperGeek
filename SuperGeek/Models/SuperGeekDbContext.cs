@@ -18,15 +18,12 @@ public partial class SuperGeekDbContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Name=ConnectionStrings:SuperGeek");
+        => optionsBuilder.UseSqlServer("Name=ConnectionStrings:SuperGeek");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("User_pkey");
-
-            entity.Property(e => e.Id).UseIdentityAlwaysColumn();
             entity.Property(e => e.Phone).IsFixedLength();
         });
 

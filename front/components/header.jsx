@@ -2,25 +2,28 @@ export default function Header() {
   return (
     <header className="b-black">
       <div className="conteiner flex jc-sb ai-c">
-        <a href="#">
-          <h1 class="c-w">SuperGEEK</h1>
+        <a className="logo" href="#">
+          <img src="../src/assets/image/Logo.svg" alt="" srcset="" />
         </a>
-        <nav>
+        <nav className="ai-c">
           <a className="c-w" href="#description">
             Описание
           </a>
           <a className="c-w" href="#program">
             Программа
           </a>
-          <a className="c-w" href="#">
-            Контакты
+          <a className="c-w" href="#advantage">
+            Преимущества
           </a>
-          <a className="c-w btn-main" href="#">
+          <a className="c-w" href="#main-application-form">
             Зарегистрироваться
+          </a>
+          <a className="c-w" href="#contact">
+            Контакты
           </a>
         </nav>
         <div className="contact-nav flex">
-          <img src="image/Phone.svg" alt="photo" />
+          <img src="../src/assets/image/Phone.svg" alt="photo" />
           <p className="c-w">+7 (3522) 25-45-35</p>
         </div>
       </div>

@@ -1,35 +1,12 @@
 version: "3.8"
 services:
   db:
-    image: postgres:alpine
+    image: mcr.microsoft.com/mssql/server:2022-latest
     restart: always
     environment:
-      POSTGRES_PASSWORD: 1111
-      POSTGRES_USER: SuperGeek
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SuperGeek12345
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ./db:/var/opt/mssql/data
     ports:
-      - 5432:5432
-
-  api:
-    build: ./SuperGeek
-    restart: always
-    environment:
-      - ASPNETCORE_URLS=http://+:5000
-    volumes:
-      - ./key:/root/.aspnet/DataProtection-Keys
-    depends_on:
-      - db
-    ports:
-      - 5000:5000
-
-  front:
-    build: ./front
-    restart: always
-    stdin_open: true
-    environment:
-      CHOKIDAR_USEPOLLING: true
-    depends_on:
-      - api
-    ports:
-      - 3000:80
+      - 1433:1433

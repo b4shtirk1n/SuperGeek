@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
     "axios": "^1.6.1",
+    "framer-motion": "^10.16.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-spring": "^9.7.3",
+    "sass": "^1.69.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
