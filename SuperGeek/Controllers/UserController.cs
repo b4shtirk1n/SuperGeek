@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using SuperGeek.Models;
 using SuperGeek.Services;
-using System.Net;
-using System.Net.Mail;
 
 namespace SuperGeek.Controllers
 {
@@ -13,30 +11,19 @@ namespace SuperGeek.Controllers
     {
         private readonly SuperGeekDbContext context;
         private readonly TelegramService tg;
+        private readonly EmailService email;
 
-        public UserController(SuperGeekDbContext context, TelegramService tg)
+        public UserController(SuperGeekDbContext context, TelegramService tg, EmailService email)
         {
             this.context = context;
             this.tg = tg;
+            this.email = email;
         }
 
         [HttpPost]
         public async Task<IActionResult> SingUp(UserDTO user)
         {
-            MailAddress from = new("SuperGeek2023@yandex.ru");
-            MailAddress to = new("wowan4512@gmail.com");
-            MailMessage message = new(from, to)
-            {
-                Subject = "Твое приложение оценили!",
-                IsBodyHtml = false,
-                Body = $"Your mark is"
-            };
-            SmtpClient smtp = new("smtp.yandex.ru", 465)
-            {
-                Credentials = new NetworkCredential("SuperGeek", "sgslmzcydcrfqcai"),
-                EnableSsl = true
-            };
-            smtp.Send(message);
+            await email.SendAsync(user.Email);
 
             if (await context.Users.FirstOrDefaultAsync(u => u.Email == user.Email
                 || u.Phone == user.Phone) is User)
@@ -58,6 +45,8 @@ namespace SuperGeek.Controllers
             {
                 return BadRequest();
             }
+            await email.SendAsync(user.Email);
+
             await tg.SendLogAsync($"Пользователь:\n{user.Email}\n{user.Phone}\n{user.FirstName}"
                 + $"\n{user.LastName}{(user.Patronymic == null ? ""
                 : $"\n{user.Patronymic}")}\nзарегистрирован");

@@ -1,5 +1,17 @@
 version: "3.8"
 services:
+  api:
+    build: "./SuperGeek"
+    restart: always
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+    volumes:
+      - ./key:/root/.aspnet/DataProtection-Keys
+    depends_on:
+      - db
+    ports:
+      - 5000:5000
+
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     restart: always
@@ -10,3 +22,14 @@ services:
       - ./db:/var/opt/mssql/data
     ports:
       - 1433:1433
+
+  front:
+    build: "./front"
+    restart: always
+    stdin_open: true
+    environment:
+      CHOKIDAR_USEPOLLING: true
+    depends_on:
+      - api
+    ports:
+      - 3000:80

@@ -70,11 +70,11 @@ export default function App() {
       } else {
         setMsg("Данные введены неверно!");
       }
-      msgRef.current.className = erStyle;
     }
   }
 
   async function handleSubmit(e) {
+    msgRef.current.className = erStyle;
     e.preventDefault();
     await onSingUp();
     toggleShow(true);

@@ -11,6 +11,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<SuperGeekDbContext>();
 builder.Services.AddTransient<DbConnectionService>();
 
+builder.Services.AddTransient(o => new EmailService("SuperGeek2023@yandex.ru", "sgslmzcydcrfqcai",
+    "SuperGeek2023@yandex.ru"));
+
 builder.Services.AddTransient(o => new TelegramService(tgConfig["API"]!, tgConfig["Username"]!));
 
 var app = builder.Build();
