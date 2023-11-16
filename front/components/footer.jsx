@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="footer-conteiner conteiner">
         <div className="footer-item flex ai-c jc-sb">
           <a className="logo" href="#">
-            <img src="../src/assets/image/Logo.svg" alt="" srcset="" />
+            <img srcSet="../src/assets/image/Logo.svg" alt="" srcset="" />
           </a>
           <nav>
             <a className="c-w" href="#description">

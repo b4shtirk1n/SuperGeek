@@ -156,7 +156,7 @@ export default function App() {
               </div>
               <div className="photo">
                 <img
-                  src="../src/assets/image/aboutUs.svg"
+                  srcSet="../src/assets/image/aboutUs.svg"
                   alt="photo"
                   srcset=""
                 />
@@ -293,7 +293,7 @@ export default function App() {
           <div className="main-application-form-block flex jc-c ai-c">
             <div className="application-form-item application-form-item-left">
               <a className="logo" href="#">
-                <img src="../src/assets/image/Logo.svg" alt="" srcset="" />
+                <img srcSet="../src/assets/image/Logo.svg" alt="" srcset="" />
               </a>
               <h4>Заполните поля для регистрации на форум</h4>
               <p>форма регистрации доступна все студентам СПО и Вузов</p>
@@ -393,14 +393,14 @@ export default function App() {
               <div className="item-contact-info icon-con c-black">
                 <p>Соц.сети</p>
                 <a href="#" className="icon-contact">
-                  <img src="../src/assets/image/insta.svg" alt="" srcset="" />
+                  <img srcSet="../src/assets/image/insta.svg" alt="" srcset="" />
                 </a>
                 <a href="#" className="icon-contact">
-                  <img src="../src/assets/image/vk.svg" alt="" srcset="" />
+                  <img srcSet="../src/assets/image/vk.svg" alt="" srcset="" />
                 </a>
                 <a href="#" className="icon-contact">
                   <img
-                    src="../src/assets/image/telegram.svg"
+                    srcSet="../src/assets/image/telegram.svg"
                     alt=""
                     srcset=""
                   />
