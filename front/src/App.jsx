@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import axios from "../api/axios";
 import aboutUs from "../src/assets/image/aboutUs.svg";
-import logo from "../src/assets/image/Logo.svg";
+import logo from "../src/assets/image/logo.svg";
 import insta from "../src/assets/image/insta.svg";
 import vk from "../src/assets/image/vk.svg";
 import telegram from "../src/assets/image/telegram.svg";
