@@ -11,8 +11,8 @@ import telegram from "../src/assets/image/telegram.svg";
 
 export default function App() {
   const singUpURL = "/User/SingUp";
-  const erStyle = "flex jc-c ai-c error";
-  const scStyle = "flex jc-c ai-c success";
+  const erStyle = "error";
+  const scStyle = "success";
 
   const initState = {
     email: "",
@@ -26,8 +26,7 @@ export default function App() {
   const [policy, setPolicy] = useState(false);
   const [show, toggleShow] = useState(false);
   const [msg, setMsg] = useState("");
-
-  const msgRef = useRef();
+  const [msgStyle, setMsgStyle] = useState(erStyle);
 
   const opacity = useSpring({
     from: { opacity: 0 },
@@ -55,7 +54,7 @@ export default function App() {
     try {
       const response = await axios.post(singUpURL, data);
       setMsg("Вы зарегистрированы!");
-      msgRef.current.className = scStyle;
+      setMsgStyle = scStyle;
     } catch (ex) {
       if (!ex?.response) {
         setMsg("Сервер недоступен!");
@@ -70,8 +69,8 @@ export default function App() {
   }
 
   async function handleSubmit(e) {
-    msgRef.current.className = erStyle;
     e.preventDefault();
+    setMsgStyle = erStyle;
     await onSingUp();
     toggleShow(true);
     setTimeout(() => {
@@ -356,7 +355,11 @@ export default function App() {
           </div>
         </animated.section>
       </main>
-      <animated.div ref={msgRef} className="flex jc-c ai-c error" style={margin}>
+      <animated.div
+        ref={msgRef}
+        className={`flex jc-c ai-c ${msgStyle}`}
+        style={margin}
+      >
         <text>{msg}</text>
       </animated.div>
       <Footer />
