@@ -1,25 +1,4 @@
-$blue: #3a5199;
-$black: #2f2e33;
-
-@mixin field-input($border) {
-  background-color: rgb(72, 72, 72);
-  color: rgb(255, 255, 255);
-  padding: 10px 20px;
-  margin: 10px 0;
-  font-size: 20px;
-  width: 600px;
-  border-radius: 12px;
-  border: $border;
-}
-
-@mixin msg-handler($bc-cl) {
-  position: fixed;
-  background-color: $bc-cl;
-  color: white;
-  top: 96%;
-  height: 4%;
-  width: 100%;
-}
+@import "./var.scss";
 
 html {
   font-family: "Roboto", sans-serif;
@@ -64,6 +43,15 @@ footer {
   a:hover {
     color: #d5d6d2;
   }
+
+  .footer-item {
+    border-bottom: 2px solid #fff;
+    margin-bottom: 10px;
+
+    a {
+      padding-right: 30px;
+    }
+  }
 }
 
 h2 {
@@ -94,7 +82,6 @@ h5 {
   background-size: 90%;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
   background-color: rgba(0, 0, 0, 0.1);
   padding-bottom: 50px;
 }
@@ -150,7 +137,7 @@ h5 {
   align-items: center;
 }
 
-.conteiner {
+.container {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
@@ -267,15 +254,6 @@ h5 {
   }
 }
 
-.footer-item {
-  border-bottom: 2px solid #fff;
-  margin-bottom: 10px;
-
-  a {
-    padding-right: 30px;
-  }
-}
-
 .Copyright {
   padding-right: 30px;
 }
@@ -288,11 +266,22 @@ h5 {
   margin-right: auto;
   height: 500px;
   color: #f8f8f8;
+
+  @include breakpoint(laptop) {
+    display: block;
+    height: 100%;
+  }
 }
 
 .application-form-item {
-  width: 50%;
   padding: 60px;
+
+  @include breakpoint(laptop) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
   h4 {
     font-size: 40px;
@@ -303,29 +292,46 @@ h5 {
     color: #999999;
     margin: 30px 0;
   }
-}
 
-.application-form-item-left {
-  padding: 0 150px;
-}
+  a {
+    color: white;
+  }
 
-.application-form-item-input {
-  @include field-input(0);
-}
+  &-left {
+    padding: 0 150px;
 
-.application-form-item-input-error {
-  @include field-input(1px solid red);
-}
+    @include breakpoint(laptop) {
+      padding: 60px;
+    }
+  }
 
-.application-form-item-input-error:focus {
-  outline: none !important;
-  border: 1px solid red;
+  &-input {
+    @include field-input(0);
+
+    &-error {
+      @include field-input(1px solid red);
+
+      &:focus {
+        outline: none !important;
+        border: 1px solid red;
+      }
+    }
+  }
 }
 
 .form-item-input-check {
   margin: 10px 0;
   width: 50px;
   border-color: #fff;
+
+  @include breakpoint(laptop) {
+    margin-left: 20px;
+    width: 50px;
+  }
+}
+
+.cont-adva {
+  display: flex;
 }
 
 .application-form-button {
@@ -338,15 +344,14 @@ h5 {
   border-radius: 12px;
   border: none;
   margin: 10px 0;
-}
 
-.application-form-button:hover {
-  background: #d5d6d2;
-}
+  @include breakpoint(laptop) {
+    margin-left: auto;
+    margin-right: 25px;
+  }
 
-.application-form-item {
-  a {
-    color: white;
+  &:hover {
+    background: #d5d6d2;
   }
 }
 
@@ -354,7 +359,7 @@ h5 {
   width: 425px;
   border-radius: 30px;
   padding: 30px;
-  margin-right: 30px;
+  margin: 0 10px 0 10px;
 }
 
 .logo {

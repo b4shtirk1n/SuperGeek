@@ -1,6 +1,5 @@
 import { useSpring, animated } from "@react-spring/web";
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import axios from "../api/axios";
@@ -23,20 +22,6 @@ export default function App() {
     patronymic: "",
   };
 
-  const sectionVariants = {
-    offscreen: {
-      opacity: 0,
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 2,
-      },
-    },
-  };
-
   const [user, setUser] = useState(initState);
   const [policy, setPolicy] = useState(false);
   const [show, toggleShow] = useState(false);
@@ -44,7 +29,13 @@ export default function App() {
 
   const msgRef = useRef();
 
-  const props = useSpring({
+  const opacity = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 400 },
+  });
+
+  const margin = useSpring({
     marginTop: show ? "0" : "4%",
     config: { duration: 400 },
   });
@@ -98,22 +89,11 @@ export default function App() {
   }
 
   return (
-    <motion.div
-      initial="offscreen"
-      whileInView="onscreen"
-      viewport={{ once: true }}
-      variants={sectionVariants}
-    >
+    <animated.div initial="offscreen" style={{ ...opacity }}>
       <Header />
       <main>
-        <motion.section
-          id="geek-action"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="main-info conteiner flex column ">
+        <animated.section id="geek-action" style={{ ...opacity }}>
+          <div className="main-info container flex column ">
             <h2 className="c-w">
               Супер гик — <br />
               форум для студентов
@@ -128,15 +108,9 @@ export default function App() {
               <a href="#">Зарегистрироваться</a>
             </div>
           </div>
-        </motion.section>
-        <motion.section
-          id="description"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="desc-conteiner conteiner">
+        </animated.section>
+        <animated.section id="description" style={{ ...opacity }}>
+          <div className="desc-container container">
             <h3 className="c-black">О нас</h3>
             <div className="desc-item flex">
               <div className="desc">
@@ -164,16 +138,9 @@ export default function App() {
               </div>
             </div>
           </div>
-        </motion.section>
-        <motion.section
-          id="program"
-          class="b-black"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="program-conteiner conteiner">
+        </animated.section>
+        <animated.section id="program" class="b-black" style={{ ...opacity }}>
+          <div className="program-container container">
             <h3 className="c-w">Программа на весь форум</h3>
             <div className="indent flex jc-sb">
               <div className="item-program b-black">
@@ -238,15 +205,9 @@ export default function App() {
               </div>
             </div>
           </div>
-        </motion.section>
-        <motion.section
-          id="advantage"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="advantage-conteiner conteiner">
+        </animated.section>
+        <animated.section id="advantage" style={{ ...opacity }}>
+          <div className="advantage-container container">
             <h3 className="c-black">Преимущества</h3>
             <div className="cont-adva flex jc-sb">
               <div className="advantage-item b-black c-w">
@@ -283,14 +244,8 @@ export default function App() {
               </div>
             </div>
           </div>
-        </motion.section>
-        <motion.section
-          id="main-application-form"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
+        </animated.section>
+        <animated.section id="main-application-form" style={{ ...opacity }}>
           <div className="main-application-form-block flex jc-c ai-c">
             <div className="application-form-item application-form-item-left">
               <a className="logo" href="#">
@@ -363,15 +318,9 @@ export default function App() {
               </button>
             </div>
           </div>
-        </motion.section>
-        <motion.section
-          id="contact"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true }}
-          variants={sectionVariants}
-        >
-          <div className="contact-conteiner conteiner">
+        </animated.section>
+        <animated.section id="contact" style={{ ...opacity }}>
+          <div className="contact-container container">
             <h3 className="c-black">Контакты</h3>
             <div className="item-contact flex jc-sb">
               <div className="item-contact-info c-black">
@@ -405,12 +354,12 @@ export default function App() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </animated.section>
       </main>
-      <animated.div ref={msgRef} className="flex jc-c ai-c error" style={props}>
+      <animated.div ref={msgRef} className="flex jc-c ai-c error" style={margin}>
         <text>{msg}</text>
       </animated.div>
       <Footer />
-    </motion.div>
+    </animated.div>
   );
 }

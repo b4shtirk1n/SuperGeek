@@ -1,0 +1,52 @@
+$blue: #3a5199;
+$black: #2f2e33;
+
+@mixin field-input($border) {
+    background-color: rgb(72, 72, 72);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 90%;
+    font-size: 20px;
+    border-radius: 12px;
+    border: $border;
+
+    @include breakpoint(laptop) {
+        margin: 10px 20px 10px 20px;
+    }
+}
+
+@mixin msg-handler($bc-cl) {
+    position: fixed;
+    background-color: $bc-cl;
+    color: white;
+    top: 96%;
+    height: 4%;
+    width: 100%;
+}
+
+@mixin breakpoint($res) {
+    @if ($res ==desktop) {
+        @media (min-width: 1300px) {
+            @content;
+        }
+    }
+
+    @else if ($res ==laptop) {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if ($res ==tablet) {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if ($res ==mobile) {
+        @media (max-width: 320px) {
+            @content;
+        }
+    }
+}

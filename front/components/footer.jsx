@@ -3,7 +3,7 @@ import logo from "../src/assets/image/logo.svg";
 export default function Footer() {
   return (
     <footer className="b-black">
-      <div className="footer-conteiner conteiner">
+      <div className="footer-container container">
         <div className="footer-item flex ai-c jc-sb">
           <a className="logo" href="#">
             <img src={logo} alt="" />

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SuperGeek")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f65dc260b20c90f947efffe8bbc258a029fc55e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d53c797e4b2135a37ddbd2bdf1c440b1341e6309")]
 [assembly: System.Reflection.AssemblyProductAttribute("SuperGeek")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SuperGeek")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

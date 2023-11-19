@@ -4,7 +4,7 @@ import photo from "../src/assets/image/Phone.svg";
 export default function Header() {
   return (
     <header className="b-black">
-      <div className="conteiner flex jc-sb ai-c">
+      <div className="container flex jc-sb ai-c">
         <a className="logo" href="#">
           <img src={logo} alt="" />
         </a>
